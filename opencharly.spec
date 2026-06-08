@@ -1,28 +1,28 @@
-# overthink.spec — the native RPM for the `ov` CLI (Fedora / rpm-family).
+# opencharly.spec — the native RPM for the `charly` CLI (Fedora / rpm-family).
 #
-# Built by ov's localpkg mechanism AND the release-artifact path through ONE
-# shared build.yml distro.fedora.format.rpm.local_pkg.build_template: the ov
-# binary is built on the HOST (prebuilt bin/ov, or a go-build fallback) and
+# Built by charly's localpkg mechanism AND the release-artifact path through ONE
+# shared build.yml distro.fedora.format.rpm.local_pkg.build_template: the charly
+# binary is built on the HOST (prebuilt bin/charly, or a go-build fallback) and
 # bind-mounted into a fedora container as the ovbin define; rpmbuild here just
 # packages it. The package version is the binary's own CalVer, passed as the
-# ovver define, so `rpm -q overthink` always agrees with `ov version`.
+# ovver define, so `rpm -q opencharly` always agrees with `charly version`.
 #
-# Install: `dnf install ./overthink-*.rpm` AUTO-RESOLVES every mandatory dep
+# Install: `dnf install ./opencharly-*.rpm` AUTO-RESOLVES every mandatory dep
 # below from the Fedora repos (all present, incl. tailscale). Optional/situational
 # tools are Suggests: — documented, never auto-pulled.
 
 %global debug_package %{nil}
 %global __strip /bin/true
 
-Name:           overthink
+Name:           opencharly
 Version:        %{ovver}
 Release:        1%{?dist}
-Summary:        Overthink container management CLI
+Summary:        OpenCharly container management CLI
 License:        MIT
 URL:            https://github.com/overthinkos/overthink
 ExclusiveArch:  x86_64
 
-# --- Mandatory runtime deps (every repo-available tool ov invokes; Fedora names) ---
+# --- Mandatory runtime deps (every repo-available tool charly invokes; Fedora names) ---
 Requires:       glibc
 Requires:       podman
 Requires:       gocryptfs
@@ -57,16 +57,16 @@ Suggests:       xorg-x11-drv-nvidia-cuda
 Suggests:       kubernetes-client
 
 %description
-Overthink container management CLI — compose, build, deploy, and manage
+OpenCharly container management CLI — compose, build, deploy, and manage
 container boxes from a library of fully configurable candies. This package
-ships the `ov` binary; dnf auto-resolves its mandatory dependencies.
+ships the `charly` binary; dnf auto-resolves its mandatory dependencies.
 
 %install
-install -Dm0755 %{ovbin} %{buildroot}%{_bindir}/ov
+install -Dm0755 %{ovbin} %{buildroot}%{_bindir}/charly
 
 %files
-%{_bindir}/ov
+%{_bindir}/charly
 
 %changelog
 * Sat Jun 06 2026 Andreas Trawoeger <atrawog@overthink.net> - %{ovver}-1
-- Native RPM for the ov CLI; version tracks the bundled binary's CalVer.
+- Native RPM for the charly CLI; version tracks the bundled binary's CalVer.
