@@ -68,5 +68,5 @@ install -Dm0755 %{ovbin} %{buildroot}%{_bindir}/charly
 %{_bindir}/charly
 
 %changelog
-* Sat Jun 06 2026 Andreas Trawoeger <atrawog@overthink.net> - %{ovver}-1
+* Sat Jun 06 2026 Andreas Trawoeger <atrawog@opencharly.ai> - %{ovver}-1
 - Native RPM for the charly CLI; version tracks the bundled binary's CalVer.

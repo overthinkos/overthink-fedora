@@ -1,4 +1,4 @@
-# overthink-fedora — native RPM packaging for `charly`
+# opencharly-fedora — native RPM packaging for `charly`
 
 `opencharly.spec` builds the `opencharly` RPM (the `charly` CLI at `/usr/bin/charly`) for
 Fedora and the rpm-family distros.
