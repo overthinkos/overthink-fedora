@@ -18,4 +18,4 @@ package version from the binary's own CalVer (`%{ovver}`), so `rpm -q opencharly
 always matches `charly version`. Mandatory dependencies are `Requires:` (all in the
 Fedora repos, including tailscale); Docker / GPU / k8s tooling is `Suggests:`.
 
-History lives in the superproject's `CHANGELOG.md`.
+History lives in this repo's `CHANGELOG/` (one file per month).
