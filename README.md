@@ -3,8 +3,8 @@
 `opencharly.spec` builds the `opencharly` RPM (the `charly` CLI at `/usr/bin/charly`) for
 Fedora and the rpm-family distros.
 
-It is consumed two ways, both through the SAME
-`build.yml distro.fedora.format.rpm.local_pkg.build_template`:
+It is consumed two ways, both through the SAME embedded build-vocabulary key
+`distro.fedora.format.rpm.local_pkg.build_template`:
 
 - **localpkg deploy** — `charly deploy` / `charly update` / `charly eval run` to a `target:
   vm` (or `target: local`) Fedora target builds this RPM on the host (in a fedora
